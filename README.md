@@ -1,2 +1,2 @@
 # DrawApp
-A very simple random draw app written when waiting for brunch
+a very simple random draw app written when waiting for brunch
