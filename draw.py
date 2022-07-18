@@ -20,6 +20,10 @@ def draw():
 
     drawCount = int(input("Number of draws: "))
     drawCount = min(drawCount, itemCount)
+
+    printCurrent(drawPool)
+    sleep(SLEEP_INTERVAL)
+
     for i in range(drawCount):
         drawHint = "Drawed element %d: " % (i + 1)
 
@@ -28,8 +32,17 @@ def draw():
         drawPool.remove(candidate)
 
         # simulate sleep time
+        printCurrent(drawPool)
         if i < drawCount - 1:
             sleep(SLEEP_INTERVAL)
+
+def printCurrent(pool):
+    stringText = "Current remaining candidates:"
+    for x in pool:
+        stringText += " %s" % x
+
+    print(stringText)
+    print()
 
 if __name__ == '__main__':
     draw()
